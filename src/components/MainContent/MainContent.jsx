@@ -1,13 +1,22 @@
 import { useLoaderData } from "react-router-dom";
 import FoodCart from "../FoodCart/FoodCart";
+import FoodName from "../FoodName/FoodName";
 
 const MainContent = () => {
     const meals = useLoaderData()
     console.log(meals)
     return (
-        <div className="grid grid-cols-12">
-            <div className="col-span-3">
-                <h1 className="text-3xl font-bold">Product Name</h1>
+        <div className="grid grid-cols-12 gap-5 my-10">
+            <div className="col-span-3 card shadow-xl rounded-3xl">
+                <div className="bg-green-400 p-4 mb-4 rounded-2xl">
+
+                <h1 className="text-3xl font-bold text-center">Food Name</h1>
+                </div>
+                <div className="flex flex-col gap-4 mx-4">
+                    {
+                        meals.categories.map(meal=><FoodName key={meal.idCategory} meal={meal}></FoodName>)
+                    }
+                </div>
             </div>
             
             <div className="col-span-9">

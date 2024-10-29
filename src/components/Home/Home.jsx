@@ -6,7 +6,10 @@ const Home = () => {
     return (
         <div>
             <NavBar></NavBar>
+            <section className="container mx-auto px-5">
+
                 <Outlet></Outlet>
+            </section>
             <Footer></Footer>
         </div>
     );

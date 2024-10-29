@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import MainContent from './components/MainContent/MainContent';
+import FoodDetails from './components/FoodDetails/FoodDetails';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       loader: ()=> fetch("https://www.themealdb.com/api/json/v1/1/categories.php"),
       element: <MainContent></MainContent>
     },
+    {
+      path:"/details",
+      element:<FoodDetails></FoodDetails>
+    }
     
     ]
   },
